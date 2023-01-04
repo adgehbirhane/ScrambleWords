@@ -36,10 +36,12 @@ public class WeightSelection extends JFrame implements ActionListener {
     public WeightSelection() {
 
         setTitle("Guess the Scrambled Word");
-        setLayout(new GridBagLayout());   
+        setLayout(new GridBagLayout()); 
+
         // border = BorderFactory.createLineBorder(Color.green,3);
         // setBorder(border);
         // setContentPane(new JLabel(new ImageIcon("C:\\Users\\Administrator\\Pictures\\bg.png")));
+        //  
 
         banner = new JLabel("Guess the Scrambled Word");
         banner.setFont(new Font("Serif",Font.PLAIN, 40));
