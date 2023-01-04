@@ -1,18 +1,19 @@
 package frames;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.*;        
 import java.awt.event.*;
 
-public class Home extends JFrame {
-    private JFrame frame;
+public class Home extends JFrame implements ActionListener{
+
     private JLabel banner;
-    private JComboBox usernameComboBox;
+    private JComboBox<String> usernameComboBox;
     private JButton continueButton;
 
     public Home() {
-        frame = new JFrame("Guess the Scrambled Word");
-        frame.setLayout(new GridBagLayout());
+
+        setTitle("Guess the Scrambled Word");
+        setLayout(new GridBagLayout());
 
         banner = new JLabel("Guess the Scrambled Word");
         banner.setFont(new Font("Ariel", Font.BOLD, 40));
@@ -33,13 +34,24 @@ public class Home extends JFrame {
         GridBagConstraints continueConstraint = new GridBagConstraints();
         continueConstraint.gridx = 0;
         continueConstraint.gridy = 2;
+        continueButton.addActionListener(this);
 
-        frame.add(banner, bannerConstraint);
-        frame.add(usernameComboBox, usernameConstraint);
-        frame.add(continueButton, continueConstraint);
+        add(banner, bannerConstraint);
+        add(usernameComboBox, usernameConstraint);
+        add(continueButton, continueConstraint);
 
-        frame.setSize(1500, 1000);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        setSize(1500, 1000);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        if(e.getActionCommand().equals("Continue")){
+            this.dispose();
+            new WeightSelection();
+        }
+        
     }
 }
