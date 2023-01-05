@@ -221,8 +221,7 @@ public class WeightSelection extends JFrame implements ActionListener {
     } 
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub  
+    public void actionPerformed(ActionEvent e) { 
 
         if(e.getActionCommand().equals("BACK")){
             this.dispose();

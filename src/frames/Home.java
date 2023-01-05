@@ -9,6 +9,7 @@ public class Home extends JFrame implements ActionListener{
     private JLabel banner;
     private JComboBox<String> usernameComboBox;
     private JButton continueButton;
+    private JButton newUserButton; // it forwards to the registration page.
 
     public Home() {
 
@@ -28,17 +29,27 @@ public class Home extends JFrame implements ActionListener{
         usernameConstraint.gridx = 0;
         usernameConstraint.gridy = 1;
         usernameConstraint.insets = new Insets(0, 0, 10, 0);
-
+        
         continueButton = new JButton("Continue");
         continueButton.setPreferredSize(new Dimension(400, 30));
+        continueButton.addActionListener(this);
         GridBagConstraints continueConstraint = new GridBagConstraints();
         continueConstraint.gridx = 0;
         continueConstraint.gridy = 2;
-        continueButton.addActionListener(this);
+        
+        newUserButton = new JButton("new account");
+        newUserButton.setPreferredSize(new Dimension(200, 30));
+        newUserButton.addActionListener(this);
+        newUserButton.setBackground(Color.GRAY);
+        GridBagConstraints newUserConstraint = new GridBagConstraints();
+        newUserConstraint.gridx = 0;
+        newUserConstraint.gridy = 3;
+        newUserConstraint.insets = new Insets(20, 200, 0, 0);
 
         add(banner, bannerConstraint);
         add(usernameComboBox, usernameConstraint);
         add(continueButton, continueConstraint);
+        add(newUserButton, newUserConstraint);
 
         setSize(1500, 1000);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -46,11 +57,15 @@ public class Home extends JFrame implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+    public void actionPerformed(ActionEvent e) { 
+        
         if(e.getActionCommand().equals("Continue")){
             this.dispose();
             new WeightSelection();
+        }
+        if(e.getActionCommand().equals("new account")){
+            this.dispose();
+            new Registration();
         }
         
     }
