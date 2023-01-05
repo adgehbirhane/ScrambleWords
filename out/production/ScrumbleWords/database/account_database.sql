@@ -13,6 +13,8 @@ create table user_account(
     primary key(id));
 
 
--- we will have this two tables 
--- table to store words prepared for game, and
--- table to store users progress in a game that linked to their account.
+-- In addition to that, we will have this two tables 
+    -- table to store words prepared for game, and
+    -- table to store users progress in a game that linked to their account.
+
+    

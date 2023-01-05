@@ -10,10 +10,8 @@ import java.awt.event.ActionListener;
 public class WeightSelection extends JFrame implements ActionListener {
 
     private JComboBox<String> difficultyComboBox; // we use to choose difficulty of the game.
-    private JButton continueButton;
-    private JButton backButton;
-
-    // All of this Radio buttons are the graphical sub-level chooses of the game.
+    private JButton continueButton, backButton; 
+    // All of this JLabel buttons are the graphical sub-level chooses of the game.
     private JLabel level1JLabel, level2JLabel, level3JLabel, level4JLabel, level5JLabel, level6JLabel, level7JLabel,
             level8JLabel, level9JLabel, level10JLabel;
 
@@ -121,7 +119,7 @@ public class WeightSelection extends JFrame implements ActionListener {
         setSize(800, 500);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+        setVisible(true); 
     }
 
     @Override 
