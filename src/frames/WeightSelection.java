@@ -1,234 +1,138 @@
 package frames;
 
-import javax.swing.*;
-// import javax.swing.border.*;
+import javax.swing.*; 
+import javax.swing.border.EmptyBorder;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WeightSelection extends JFrame implements ActionListener { 
+public class WeightSelection extends JFrame implements ActionListener {
 
-    private JLabel banner;  // we use for header
-    private JComboBox<String> usernameComboBox; // we use to choose hardness of the game.
-    private JButton continueButton;  // we use to go forward.
-    private JButton backButton;  // we use to go backward.
+    private JComboBox<String> difficultyComboBox; // we use to choose difficulty of the game.
+    private JButton continueButton;
+    private JButton backButton;
 
+    // All of this Radio buttons are the graphical sub-level chooses of the game.
+    private JLabel level1JLabel, level2JLabel, level3JLabel, level4JLabel, level5JLabel, level6JLabel, level7JLabel,
+            level8JLabel, level9JLabel, level10JLabel;
 
-// All of this Radio buttons are the graphical sub-level chooses of the game.
-    private JLabel level1JLabel;
-    private JLabel level2JLabel;
-    private JLabel level3JLabel;
-    private JLabel level4JLabel;
-    private JLabel level5JLabel;
-    private JLabel level6JLabel; 
-    private JLabel level7JLabel; 
-    private JLabel level8JLabel; 
-    private JLabel level9JLabel; 
-    private JLabel level10JLabel; 
+    private JLabel levelLabels[] = new JLabel[10];
 
-// for the container of the above sub-level chooses.
-    private JPanel levelPanel;    
+    // for the container of the above sub-level chooses.
+    private JPanel levelPanel, actionButtonPannel, levelSelectionPannel;
 
-// constractor
-    /**
-     * 
-     */
     public WeightSelection() {
 
         setTitle("Guess the Scrambled Word");
-        setLayout(new GridBagLayout()); 
+        setLayout(new BorderLayout());
 
-        // border = BorderFactory.createLineBorder(Color.green,3);
-        // setBorder(border);
-        // setContentPane(new JLabel(new ImageIcon("C:\\Users\\Administrator\\Pictures\\bg.png")));
-        //  
+        levelSelectionPannel = new JPanel();
+        levelSelectionPannel.setLayout(new GridBagLayout());
 
-        banner = new JLabel("Guess the Scrambled Word");
-        banner.setFont(new Font("Serif",Font.PLAIN, 40));
-        GridBagConstraints bannerConstraint = new GridBagConstraints();
-        bannerConstraint.gridx = 0;
-        bannerConstraint.gridy = 0;
-        bannerConstraint.insets = new Insets(0, 100, 50, 0);
+        // This are difficulties of the game.
+        difficultyComboBox = new JComboBox<String>();
+        difficultyComboBox.addItem("Easy");
+        difficultyComboBox.addItem("Moderate");
+        difficultyComboBox.addItem("Hard");
+        difficultyComboBox.addItem("Extreme");
+        difficultyComboBox.setPreferredSize(new Dimension(400, 30));
+        GridBagConstraints difficultyComboBoxConstraint = new GridBagConstraints();
+        difficultyComboBoxConstraint.gridx = 0;
+        difficultyComboBoxConstraint.gridy = 0;
+        difficultyComboBoxConstraint.insets = new Insets(0, 0, 10, 0);
 
-        // This are hardness of the game. 
-        usernameComboBox = new JComboBox<String>(); 
-            usernameComboBox.addItem("Easy");
-            usernameComboBox.addItem("Moderate");
-            usernameComboBox.addItem("Hard"); 
-            usernameComboBox.addItem("Extreme");   
-        usernameComboBox.setPreferredSize(new Dimension(400, 30));
-        GridBagConstraints usernameConstraint = new GridBagConstraints();
-        usernameConstraint.gridx = 0;
-        usernameConstraint.gridy = 1;
-        usernameConstraint.insets = new Insets(0, 100, 10, 0);
-
-// for the container of the above sub-level chooses.
-        levelPanel = new JPanel();  
-        levelPanel.setLayout(new GridBagLayout()); 
-        levelPanel.setPreferredSize(new Dimension(500,150));
+        // for the container of the above sub-level chooses.
+        levelPanel = new JPanel();
+        levelPanel.setLayout(new FlowLayout());
         levelPanel.setBackground(new Color(150, 140, 140));
+        levelPanel.setPreferredSize(new Dimension(400, 100));
         GridBagConstraints levelConstraint = new GridBagConstraints();
         levelConstraint.gridx = 0;
-        levelConstraint.gridy = 2;
-        levelConstraint.insets = new Insets(50, 500, 10, 0);
-         
-        level1JLabel = new JLabel("1"); 
-        level1JLabel.setBackground(Color.pink);
-        level1JLabel.setForeground(Color.white);
-        level1JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level1JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level1Constraint = new GridBagConstraints();
-        level1Constraint.gridx = 0;
-        level1Constraint.gridy = 0; 
-        level1Constraint.insets = new Insets(0, 0, 10, 50);
-        
-        level2JLabel = new JLabel("2"); 
-        level2JLabel.setBackground(Color.pink);
-        level2JLabel.setForeground(Color.white);
-        level2JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level2JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level2Constraint = new GridBagConstraints();
-        level2Constraint.gridx = 1;
-        level2Constraint.gridy = 0; 
-        level2Constraint.insets = new Insets(0, 0, 10, 50);
+        levelConstraint.gridy = 1;
 
-        level3JLabel = new JLabel("3"); 
-        level3JLabel.setBackground(Color.pink);
-        level3JLabel.setForeground(Color.white);
-        level3JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level3JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level3Constraint = new GridBagConstraints();
-        level3Constraint.gridx = 2;
-        level3Constraint.gridy = 0; 
-        level3Constraint.insets = new Insets(0, 0, 10, 50);
-        
-        level4JLabel = new JLabel("4"); 
-        level4JLabel.setBackground(Color.pink);
-        level4JLabel.setForeground(Color.white);
-        level4JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level4JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level4Constraint = new GridBagConstraints();
-        level4Constraint.gridx = 3;
-        level4Constraint.gridy = 0; 
-        level4Constraint.insets = new Insets(0, 0, 10, 50);
-
-        level5JLabel = new JLabel("5"); 
-        level5JLabel.setBackground(Color.pink);
-        level5JLabel.setForeground(Color.white);
-        level5JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level5JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level5Constraint = new GridBagConstraints();
-        level5Constraint.gridx = 4;
-        level5Constraint.gridy = 0; 
-        level5Constraint.insets = new Insets(0, 0, 10, 50);
-        
+        level1JLabel = new JLabel("1");
+        level2JLabel = new JLabel("2");
+        level3JLabel = new JLabel("3");
+        level4JLabel = new JLabel("4");
+        level5JLabel = new JLabel("5");
         level6JLabel = new JLabel("6");
-        level6JLabel.setBackground(Color.pink);
-        level6JLabel.setForeground(Color.white);
-        level6JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level6JLabel.setPreferredSize(new Dimension(30,30)); 
-        GridBagConstraints level6Constraint = new GridBagConstraints();
-        level6Constraint.gridx = 0;
-        level6Constraint.gridy = 1; 
-        level6Constraint.insets = new Insets(0, 0, 10, 50);
-        
-        level7JLabel = new JLabel("7"); 
-        level7JLabel.setBackground(Color.pink);
-        level7JLabel.setForeground(Color.white);
-        level7JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level7JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level7Constraint = new GridBagConstraints();
-        level7Constraint.gridx = 1;
-        level7Constraint.gridy = 1; 
-        level7Constraint.insets = new Insets(0, 0, 10, 50);
-        
-        level8JLabel = new JLabel("8"); 
-        level8JLabel.setBackground(Color.pink);
-        level8JLabel.setForeground(Color.white);
-        level8JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level8JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level8Constraint = new GridBagConstraints();
-        level8Constraint.gridx = 2;
-        level8Constraint.gridy = 1; 
-        level8Constraint.insets = new Insets(0, 0, 10, 50);
-        
+        level7JLabel = new JLabel("7");
+        level8JLabel = new JLabel("8");
         level9JLabel = new JLabel("9");
-        level9JLabel.setBackground(Color.pink);
-        level9JLabel.setForeground(Color.white);
-        level9JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level9JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level9Constraint = new GridBagConstraints();
-        level9Constraint.gridx = 3;
-        level9Constraint.gridy =1;
-        level9Constraint.insets = new Insets(0, 0, 10, 50);
-        
         level10JLabel = new JLabel("10");
-        level10JLabel.setBackground(Color.pink);
-        level10JLabel.setForeground(Color.white);
-        level10JLabel.setFont(new Font("Dialog",Font.BOLD, 20));
-        level10JLabel.setPreferredSize(new Dimension(30,30));
-        GridBagConstraints level10Constraint = new GridBagConstraints();
-        level10Constraint.gridx = 4;
-        level10Constraint.gridy =1;
-        level10Constraint.insets = new Insets(0, 0, 10, 50);
 
-        
+        levelLabels[0] = level1JLabel;
+        levelLabels[1] = level2JLabel;
+        levelLabels[2] = level3JLabel;
+        levelLabels[3] = level4JLabel;
+        levelLabels[4] = level5JLabel;
+        levelLabels[5] = level6JLabel;
+        levelLabels[6] = level7JLabel;
+        levelLabels[7] = level8JLabel;
+        levelLabels[8] = level9JLabel;
+        levelLabels[9] = level10JLabel;
+
+        for (JLabel label : levelLabels) {
+            label.setBackground(Color.pink);
+            label.setForeground(Color.white);
+            label.setFont(new Font("Dialog", Font.BOLD, 20));
+            label.setPreferredSize(new Dimension(30, 30));
+        }
+
+        levelPanel.add(level1JLabel);
+        levelPanel.add(level2JLabel);
+        levelPanel.add(level3JLabel);
+        levelPanel.add(level4JLabel);
+        levelPanel.add(level5JLabel);
+        levelPanel.add(level6JLabel);
+        levelPanel.add(level7JLabel);
+        levelPanel.add(level8JLabel);
+        levelPanel.add(level9JLabel);
+        levelPanel.add(level10JLabel);
+
+        levelSelectionPannel.add(difficultyComboBox, difficultyComboBoxConstraint);
+        levelSelectionPannel.add(levelPanel, levelConstraint);
+
+        actionButtonPannel = new JPanel();
+        actionButtonPannel.setBorder(new EmptyBorder(0, 0, 25, 0));
+
         backButton = new JButton("BACK");
-        backButton.setPreferredSize(new Dimension(200, 30));
+        backButton.setPreferredSize(new Dimension(200, 50));
         backButton.setBackground(new Color(60, 20, 20));
         backButton.setForeground(Color.WHITE);
         backButton.setFocusable(false);
-        backButton.setFont(new Font("Serif",Font.PLAIN, 20));
+        backButton.setFont(new Font("Arial", Font.PLAIN, 20));
         backButton.addActionListener(this);
-        GridBagConstraints backConstraint = new GridBagConstraints();
-        backConstraint.gridx = 0;
-        backConstraint.gridy = 6;
-        backConstraint.insets = new Insets(50, 0, 0, 0); 
-        
-        continueButton = new JButton("NEXT");
-        continueButton.setPreferredSize(new Dimension(200, 30));
+
+        continueButton = new JButton("PLAY");
+        continueButton.setPreferredSize(new Dimension(200, 50));
         continueButton.setBackground(new Color(20, 60, 20));
-        continueButton.setFont(new Font("Serif",Font.PLAIN,20));
+        continueButton.setFont(new Font("Arial", Font.PLAIN, 20));
         continueButton.setForeground(Color.WHITE);
         continueButton.setFocusable(false);
-        GridBagConstraints continueConstraint = new GridBagConstraints();
-        continueConstraint.gridx = 1;
-        continueConstraint.gridy = 6; 
-        continueConstraint.insets = new Insets(50, 0, 0, 100); 
 
-        add(banner, bannerConstraint);
-        add(usernameComboBox, usernameConstraint);
+        actionButtonPannel.add(backButton);
+        actionButtonPannel.add(continueButton);
 
-        add(levelPanel,levelConstraint);
-            levelPanel.add(level1JLabel,level1Constraint);
-            levelPanel.add(level2JLabel,level2Constraint);
-            levelPanel.add(level3JLabel,level3Constraint);
-            levelPanel.add(level4JLabel,level4Constraint);
-            levelPanel.add(level5JLabel,level5Constraint);
-            levelPanel.add(level6JLabel,level6Constraint);
-            levelPanel.add(level7JLabel,level7Constraint);
-            levelPanel.add(level8JLabel,level8Constraint);
-            levelPanel.add(level9JLabel,level9Constraint);
-            levelPanel.add(level10JLabel,level10Constraint);
-        
-        add(continueButton, continueConstraint);
-        add(backButton, backConstraint);
+        add(levelSelectionPannel, BorderLayout.CENTER);
+        add(actionButtonPannel, BorderLayout.SOUTH);
 
-        setSize(1500, 1000);
+        setSize(800, 500);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
- 
-    } 
+    }
 
-    @Override
+    @Override 
     public void actionPerformed(ActionEvent e) { 
 
-        if(e.getActionCommand().equals("BACK")){
+        if (e.getActionCommand().equals("BACK")) {
             this.dispose();
             new Home();
         }
 
-        if(e.getActionCommand().equals("NEXT")){
+        if (e.getActionCommand().equals("PLAY")) {
             // this.dispose();
             // new Game();
         }

@@ -1,10 +1,10 @@
 package frames;
 
 import javax.swing.*;
-import java.awt.*;        
+import java.awt.*;
 import java.awt.event.*;
 
-public class Home extends JFrame implements ActionListener{
+public class Home extends JFrame implements ActionListener {
 
     private JLabel banner;
     private JComboBox<String> usernameComboBox;
@@ -51,12 +51,13 @@ public class Home extends JFrame implements ActionListener{
         add(continueButton, continueConstraint);
         add(newUserButton, newUserConstraint);
 
-        setSize(1500, 1000);
+        setSize(800, 500);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
 
-    @Override
+    @Override 
     public void actionPerformed(ActionEvent e) { 
         
         if(e.getActionCommand().equals("Continue")){
@@ -67,6 +68,6 @@ public class Home extends JFrame implements ActionListener{
             this.dispose();
             new Registration();
         }
-        
+         
     }
 }
