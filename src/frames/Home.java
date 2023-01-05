@@ -1,8 +1,12 @@
 package frames;
 
 import javax.swing.*;
+
+import repository.AccountRepository;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Home extends JFrame implements ActionListener {
 
@@ -10,6 +14,8 @@ public class Home extends JFrame implements ActionListener {
     private JComboBox<String> usernameComboBox;
     private JButton continueButton;
     private JButton newUserButton; // it forwards to the registration page.
+    private ArrayList<String> usersList;
+    private AccountRepository accountRepository;
 
     public Home() {
 
@@ -22,8 +28,13 @@ public class Home extends JFrame implements ActionListener {
         bannerConstraint.gridx = 0;
         bannerConstraint.gridy = 0;
         bannerConstraint.insets = new Insets(0, 0, 50, 0);
+        accountRepository = new AccountRepository();
+        usersList = accountRepository.getUsername();
+        usernameComboBox = new JComboBox<String>();
+        for(String singleUser: usersList){
+            usernameComboBox.addItem(singleUser);
+        }
 
-        usernameComboBox = new JComboBox<>();
         usernameComboBox.setPreferredSize(new Dimension(400, 30));
         GridBagConstraints usernameConstraint = new GridBagConstraints();
         usernameConstraint.gridx = 0;
