@@ -49,4 +49,26 @@ public class AccountRepository {
 
         return users;
     }
+    public String getFullName(String user){
+        String fullName = "";
+		 String query = "SELECT * FROM user_account";
+//		String query = "SELECT * FROM user_account WHERE username = " + user;
+
+		try {
+			Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
+
+			ResultSet rs = con.createStatement().executeQuery(query);
+
+			while(rs.next()) {
+				fullName = rs.getString("full_name");
+			}
+
+			con.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+
+        return fullName;
+    }
 }

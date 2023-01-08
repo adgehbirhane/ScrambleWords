@@ -3,6 +3,7 @@ package frames;
 import javax.swing.*;
 
 import repository.AccountRepository;
+import module.Account;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -28,6 +29,7 @@ public class Home extends JFrame implements ActionListener {
         bannerConstraint.gridx = 0;
         bannerConstraint.gridy = 0;
         bannerConstraint.insets = new Insets(0, 0, 50, 0);
+        
         accountRepository = new AccountRepository();
         usersList = accountRepository.getUsername();
         usernameComboBox = new JComboBox<String>();
@@ -72,8 +74,14 @@ public class Home extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) { 
         
         if(e.getActionCommand().equals("Continue")){
+            Account account = new Account();
+            AccountRepository accountRepository = new AccountRepository();
+            account.setUsername((String)usernameComboBox.getSelectedItem()); 
+
             this.dispose();
-            new WeightSelection();
+            String user = account.getUsername();
+            String fullName = accountRepository.getFullName(user);
+            new WeightSelection(fullName);
         }
         if(e.getActionCommand().equals("new account")){
             this.dispose();

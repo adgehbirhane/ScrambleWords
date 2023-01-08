@@ -1,8 +1,7 @@
 package frames;
 
 import javax.swing.*; 
-import javax.swing.border.EmptyBorder;
-
+import javax.swing.border.EmptyBorder; 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,18 +14,31 @@ public class WeightSelection extends JFrame implements ActionListener {
     private JLabel level1JLabel, level2JLabel, level3JLabel, level4JLabel, level5JLabel, level6JLabel, level7JLabel,
             level8JLabel, level9JLabel, level10JLabel;
 
-    private JLabel levelLabels[] = new JLabel[10];
-
+    private JLabel username, pageTitle, levelLabels[] = new JLabel[10];
+    
     // for the container of the above sub-level chooses.
-    private JPanel levelPanel, actionButtonPannel, levelSelectionPannel;
+    private JPanel headerPanel, levelPanel, actionButtonPannel, levelSelectionPannel;
 
-    public WeightSelection() {
+    public WeightSelection(String user) {
 
         setTitle("Guess the Scrambled Word");
         setLayout(new BorderLayout());
 
         levelSelectionPannel = new JPanel();
         levelSelectionPannel.setLayout(new GridBagLayout());
+
+        headerPanel = new JPanel(); 
+        headerPanel.setBackground(new Color(128,128,128)); 
+        add(headerPanel, BorderLayout.NORTH);
+        
+        pageTitle = new JLabel("            Guess the Scrambled Word");
+        pageTitle.setFont(new Font("Dialog", Font.BOLD, 30)); 
+        headerPanel.add(pageTitle, BorderLayout.WEST);
+        
+        username = new JLabel("               " + user);
+        username.setFont(new Font("Dialog", Font.BOLD, 20)); 
+        username.setForeground(Color.BLACK);
+        headerPanel.add(username, BorderLayout.EAST);
 
         // This are difficulties of the game.
         difficultyComboBox = new JComboBox<String>();
@@ -58,7 +70,7 @@ public class WeightSelection extends JFrame implements ActionListener {
         level7JLabel = new JLabel("7");
         level8JLabel = new JLabel("8");
         level9JLabel = new JLabel("9");
-        level10JLabel = new JLabel("10");
+        level10JLabel = new JLabel(user);
 
         levelLabels[0] = level1JLabel;
         levelLabels[1] = level2JLabel;
@@ -123,8 +135,7 @@ public class WeightSelection extends JFrame implements ActionListener {
     }
 
     @Override 
-    public void actionPerformed(ActionEvent e) { 
-
+    public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("BACK")) {
             this.dispose();
             new Home();
