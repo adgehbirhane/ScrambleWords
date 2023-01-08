@@ -110,6 +110,7 @@ public class Registration extends JFrame implements ActionListener{
         cancelButton.setBackground(new Color(60, 20, 20));
         cancelButton.setForeground(Color.WHITE);
         cancelButton.setFocusable(false);
+        cancelButton.setBorder(null);
         cancelButton.setFont(new Font("Arial", Font.PLAIN, 20));
         cancelConstraint = new GridBagConstraints();
         cancelConstraint.gridx = 0;
@@ -121,6 +122,7 @@ public class Registration extends JFrame implements ActionListener{
         continueButton.setPreferredSize(new Dimension(200,50));
         continueButton.setBackground(new Color(20, 60, 20));
         continueButton.setForeground(Color.WHITE);
+        continueButton.setBorder(null);
         continueButton.setFocusable(false);
         continueButton.setFont(new Font("Arial", Font.PLAIN, 20));
         continueConstraint = new GridBagConstraints();
@@ -165,7 +167,9 @@ public class Registration extends JFrame implements ActionListener{
                     this.dispose();
                     new Home();
                 }else{
-                    JOptionPane.showMessageDialog(null,"To continue you have to fill all required space","fill the required info.",2);
+                    
+                    String msg =  "To continue you have to fill all required space";
+                    JOptionPane.showMessageDialog(null,msg,"fill the required info.",2);
                 }
             } catch (Exception r) { 
                 JOptionPane.showMessageDialog(null,r,"fill the required info.",2);

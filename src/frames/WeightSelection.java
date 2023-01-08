@@ -115,6 +115,7 @@ public class WeightSelection extends JFrame implements ActionListener {
         backButton.setBackground(new Color(60, 20, 20));
         backButton.setForeground(Color.WHITE);
         backButton.setFocusable(false);
+        backButton.setBorder(null);
         backButton.setFont(new Font("Arial", Font.PLAIN, 20));
         backButton.addActionListener(this);
 
@@ -124,6 +125,7 @@ public class WeightSelection extends JFrame implements ActionListener {
         continueButton.setFont(new Font("Arial", Font.PLAIN, 20));
         continueButton.setForeground(Color.WHITE);
         continueButton.setFocusable(false);
+        continueButton.setBorder(null);
 
         actionButtonPannel.add(backButton);
         actionButtonPannel.add(continueButton);
