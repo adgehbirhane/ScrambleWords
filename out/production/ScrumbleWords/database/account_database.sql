@@ -9,7 +9,7 @@ create table user_account(
     id int(100) auto_increment, 
     full_name varchar(100),
     email varchar(100), 
-    username varchar(100) unique, 
+    username varchar(100) uni, 
     primary key(id));
 
 
