@@ -1,7 +1,7 @@
 package frames;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.EmptyBorder; 
 
 import module.Account;
 import repository.AccountRepository;
@@ -10,11 +10,11 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Registration extends JFrame implements ActionListener{
-
+    
     private JLabel pageTitle, fullNameJLabel, emailJLabel, usernameJLabel;
     
     private JTextField fullNameTextField, emailTextField, usernameTextField;
-
+    
     private JButton continueButton, cancelButton;
 
     private GridBagConstraints fullNameTConstraint, fullNameLConstraint, actionButtonPannelConst,
@@ -29,8 +29,8 @@ public class Registration extends JFrame implements ActionListener{
 
         setTitle("Guess the Scrambled Word");
         setLayout(new BorderLayout());
-
-        ImageIcon image = new ImageIcon("logo.png");
+        
+        ImageIcon image = new ImageIcon("asset/logo.png");
         setIconImage(image.getImage()); 
         
         headerPanel = new JPanel(); 
@@ -167,7 +167,7 @@ public class Registration extends JFrame implements ActionListener{
                     this.dispose();
                     new Home();
                 }else{
-                    
+
                     String msg =  "To continue you have to fill all required space";
                     JOptionPane.showMessageDialog(null,msg,"fill the required info.",2);
                 }

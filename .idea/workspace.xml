@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b150dd97-e7b2-4430-ab8d-e32e7b91c0d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/WeightSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/WeightSelection.java" afterDir="false" />
-    </list>
+    <list default="true" id="b150dd97-e7b2-4430-ab8d-e32e7b91c0d4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

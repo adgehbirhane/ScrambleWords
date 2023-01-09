@@ -24,7 +24,7 @@ public class WeightSelection extends JFrame implements ActionListener {
         setTitle("Guess the Scrambled Word");
         setLayout(new BorderLayout());
 
-        ImageIcon image = new ImageIcon("logo.png");
+        ImageIcon image = new ImageIcon("asset/logo.png");
         setIconImage(image.getImage());
 
         levelSelectionPannel = new JPanel();

@@ -23,10 +23,10 @@ public class Home extends JFrame implements ActionListener {
         setTitle("Guess the Scrambled Word");
         setLayout(new BorderLayout());
 
-        ImageIcon image = new ImageIcon("logo.png");
+        ImageIcon image = new ImageIcon("asset/logo.png");
         setIconImage(image.getImage());
 
-        JLabel background=new JLabel(new ImageIcon("bg.png"));
+        JLabel background=new JLabel(new ImageIcon("asset/bg.png"));
         background.setLayout(new FlowLayout());
         add(background,BorderLayout.NORTH); 
 
@@ -94,7 +94,7 @@ public class Home extends JFrame implements ActionListener {
         panel.add(newUserButton, newUserConstraint);
 
         setSize(1000, 600);
-        // setResizable(false);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
     }
