@@ -2,8 +2,7 @@ package frames;
 
 import javax.swing.*; 
 
-import repository.AccountRepository;
-import module.Account;
+import repository.AccountRepository; 
 
 import java.awt.*;
 import java.awt.event.*;
