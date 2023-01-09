@@ -53,10 +53,12 @@ public class Home extends JFrame implements ActionListener {
 
         accountRepository = new AccountRepository();
         usersList = accountRepository.getUsername();
-        usernameComboBox = new JComboBox<String>();
-        for(String singleUser: usersList){
-            usernameComboBox.addItem(singleUser);
-        }
+        usernameComboBox = new JComboBox<String>(); 
+
+         if(!(usersList.isEmpty() == true))
+            for(String singleUser: usersList){
+                usernameComboBox.addItem(singleUser);
+            }
 
         usernameComboBox.setPreferredSize(new Dimension(400, 30));
         GridBagConstraints usernameConstraint = new GridBagConstraints();
@@ -102,15 +104,21 @@ public class Home extends JFrame implements ActionListener {
     @Override 
     public void actionPerformed(ActionEvent e) { 
         
-        if(e.getActionCommand().equals("Continue")){
-            Account account = new Account();
-            AccountRepository accountRepository = new AccountRepository();
-            account.setUsername((String)usernameComboBox.getSelectedItem()); 
+        if(e.getActionCommand().equals("Continue")){ 
 
-            this.dispose();
-            String user = account.getUsername();
-            String fullName = accountRepository.getFullName(user);
-            new WeightSelection(fullName);
+            AccountRepository accountRepository = new AccountRepository();
+
+            if(!(usersList.isEmpty() == true)){
+                String username = (String)usernameComboBox.getSelectedItem();
+                String fullName = accountRepository.getFullName(username);
+                this.dispose();
+                new WeightSelection(fullName);
+
+             }else{
+                 String msg =  "To continue, you have to be registered \n"+
+                               "Hint: click the 'new account' button bellow";
+                 JOptionPane.showMessageDialog(null,msg,"fill the required info.",2);
+             }
         }
         if(e.getActionCommand().equals("new account")){
             this.dispose();

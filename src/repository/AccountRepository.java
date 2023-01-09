@@ -39,7 +39,7 @@ public class AccountRepository {
 			while(rs.next()) { 
 				String username = rs.getString("username"); 
                 users.add(username); 
-			}
+			} 
 
 			con.close();
 		} catch (Exception ex) {
@@ -51,8 +51,10 @@ public class AccountRepository {
     }
     public String getFullName(String user){
         String fullName = "";
-		 String query = "SELECT * FROM user_account";
-//		String query = "SELECT * FROM user_account WHERE username = " + user;
+		  String query = "SELECT * FROM user_account";
+
+		  // I don't know why this commented code doesn't work
+//		String query = "SELECT * FROM user_account WHERE username = " + user; 
 
 		try {
 			Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
