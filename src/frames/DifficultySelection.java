@@ -1,25 +1,25 @@
 package frames;
 
-import javax.swing.*; 
-import javax.swing.border.EmptyBorder; 
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WeightSelection extends JFrame implements ActionListener {
+public class DifficultySelection extends JFrame implements ActionListener {
 
-    private JComboBox<String> difficultyComboBox; // we use to choose difficulty of the game.
-    private JButton continueButton, backButton; 
-    // All of this JLabel buttons are the graphical sub-level chooses of the game.
+    private JComboBox<String> difficultyComboBox;
+    private JButton continueButton, backButton;
     private JLabel level1JLabel, level2JLabel, level3JLabel, level4JLabel, level5JLabel, level6JLabel, level7JLabel,
             level8JLabel, level9JLabel, level10JLabel;
 
     private JLabel username, pageTitle, levelLabels[] = new JLabel[10];
-    
+
     // for the container of the above sub-level chooses.
     private JPanel headerPanel, levelPanel, actionButtonPannel, levelSelectionPannel;
 
-    public WeightSelection(String user) {
+    public DifficultySelection(String user) {
 
         setTitle("Guess the Scrambled Word");
         setLayout(new BorderLayout());
@@ -27,21 +27,22 @@ public class WeightSelection extends JFrame implements ActionListener {
         ImageIcon image = new ImageIcon("asset/logo.png");
         setIconImage(image.getImage());
 
+        headerPanel = new JPanel();
+        headerPanel.setLayout(new BorderLayout());
+        headerPanel.setBackground(new Color(161, 161, 161));
+
+        pageTitle = new JLabel("Guess the Scrambled Word");
+        pageTitle.setFont(new Font("Arial", Font.BOLD, 30));
+        pageTitle.setHorizontalAlignment(JLabel.CENTER);
+        headerPanel.add(pageTitle, BorderLayout.CENTER);
+
+        username = new JLabel(user);
+        username.setFont(new Font("Arial", Font.PLAIN, 20));
+        username.setHorizontalAlignment(JLabel.RIGHT);
+        headerPanel.add(username, BorderLayout.EAST);
+
         levelSelectionPannel = new JPanel();
         levelSelectionPannel.setLayout(new GridBagLayout());
-
-        headerPanel = new JPanel(); 
-        headerPanel.setBackground(new Color(128,128,128)); 
-        add(headerPanel, BorderLayout.NORTH);
-        
-        pageTitle = new JLabel("            Guess the Scrambled Word");
-        pageTitle.setFont(new Font("Dialog", Font.BOLD, 30)); 
-        headerPanel.add(pageTitle, BorderLayout.WEST);
-        
-        username = new JLabel("               " + user);
-        username.setFont(new Font("Dialog", Font.BOLD, 20)); 
-        username.setForeground(Color.BLACK);
-        headerPanel.add(username, BorderLayout.EAST);
 
         // This are difficulties of the game.
         difficultyComboBox = new JComboBox<String>();
@@ -130,16 +131,18 @@ public class WeightSelection extends JFrame implements ActionListener {
         actionButtonPannel.add(backButton);
         actionButtonPannel.add(continueButton);
 
+        add(headerPanel, BorderLayout.NORTH);
         add(levelSelectionPannel, BorderLayout.CENTER);
         add(actionButtonPannel, BorderLayout.SOUTH);
 
         setSize(1000, 600);
-        // setResizable(false);
+        setLocationRelativeTo(null);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true); 
+        setVisible(true);
     }
 
-    @Override 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("BACK")) {
             this.dispose();
