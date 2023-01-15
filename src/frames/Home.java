@@ -43,14 +43,14 @@ public class Home extends JFrame implements ActionListener {
                 usernameComboBox.addItem(singleUser);
             }
 
-        usernameComboBox.setPreferredSize(new Dimension(400, 30));
+        usernameComboBox.setPreferredSize(new Dimension(400, 40));
         GridBagConstraints usernameConstraint = new GridBagConstraints();
         usernameConstraint.gridx = 0;
         usernameConstraint.gridy = 2;
         usernameConstraint.insets = new Insets(0, 0, 10, 0);
 
         continueButton = new JButton("Continue");
-        continueButton.setPreferredSize(new Dimension(400, 30));
+        continueButton.setPreferredSize(new Dimension(400, 40));
         continueButton.setFont(new Font("Arial", Font.PLAIN, 20));
         continueButton.addActionListener(this);
         GridBagConstraints continueConstraint = new GridBagConstraints();
@@ -64,7 +64,7 @@ public class Home extends JFrame implements ActionListener {
         setSize(1000, 600);
         setLocationRelativeTo(null);
         setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
     }
 
@@ -74,6 +74,7 @@ public class Home extends JFrame implements ActionListener {
         if (e.getActionCommand().equals("Continue")) {
             String username = (String) usernameComboBox.getSelectedItem();
             if (username == null) {
+                // TODO do a pop window
                 System.out.println("nullllllllll");
             } else if (usersList.contains(username)) {
                 this.dispose();

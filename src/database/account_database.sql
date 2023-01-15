@@ -1,7 +1,7 @@
 
 -- database for whole game.
-create database word_scrumble;
-use word_scrumble;
+create database word_scramble;
+use word_scramble;
 
 
 -- table to store users information

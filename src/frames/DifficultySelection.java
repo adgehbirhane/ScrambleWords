@@ -1,7 +1,6 @@
 package frames;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,9 +14,7 @@ public class DifficultySelection extends JFrame implements ActionListener {
             level8JLabel, level9JLabel, level10JLabel;
 
     private JLabel username, pageTitle, levelLabels[] = new JLabel[10];
-
-    // for the container of the above sub-level chooses.
-    private JPanel headerPanel, levelPanel, actionButtonPannel, levelSelectionPannel;
+    private JPanel headerPanel, levelPanel, actionButtonPanel, levelSelectionPanel;
 
     public DifficultySelection(String user) {
 
@@ -29,22 +26,17 @@ public class DifficultySelection extends JFrame implements ActionListener {
 
         headerPanel = new JPanel();
         headerPanel.setLayout(new BorderLayout());
-        headerPanel.setBackground(new Color(161, 161, 161));
-
-        pageTitle = new JLabel("Guess the Scrambled Word");
-        pageTitle.setFont(new Font("Arial", Font.BOLD, 30));
-        pageTitle.setHorizontalAlignment(JLabel.CENTER);
-        headerPanel.add(pageTitle, BorderLayout.CENTER);
+        headerPanel.setBackground(Color.LIGHT_GRAY);
 
         username = new JLabel(user);
         username.setFont(new Font("Arial", Font.PLAIN, 20));
         username.setHorizontalAlignment(JLabel.RIGHT);
-        headerPanel.add(username, BorderLayout.EAST);
+        headerPanel.add(username, BorderLayout.WEST);
 
-        levelSelectionPannel = new JPanel();
-        levelSelectionPannel.setLayout(new GridBagLayout());
+        levelSelectionPanel = new JPanel();
+        levelSelectionPanel.setLayout(new GridBagLayout());
 
-        // This are difficulties of the game.
+        // These are difficulties of the game.
         difficultyComboBox = new JComboBox<String>();
         difficultyComboBox.addItem("Easy");
         difficultyComboBox.addItem("Moderate");
@@ -56,7 +48,6 @@ public class DifficultySelection extends JFrame implements ActionListener {
         difficultyComboBoxConstraint.gridy = 0;
         difficultyComboBoxConstraint.insets = new Insets(0, 0, 10, 0);
 
-        // for the container of the above sub-level chooses.
         levelPanel = new JPanel();
         levelPanel.setLayout(new FlowLayout());
         levelPanel.setBackground(new Color(150, 140, 140));
@@ -105,11 +96,11 @@ public class DifficultySelection extends JFrame implements ActionListener {
         levelPanel.add(level9JLabel);
         levelPanel.add(level10JLabel);
 
-        levelSelectionPannel.add(difficultyComboBox, difficultyComboBoxConstraint);
-        levelSelectionPannel.add(levelPanel, levelConstraint);
+        levelSelectionPanel.add(difficultyComboBox, difficultyComboBoxConstraint);
+        levelSelectionPanel.add(levelPanel, levelConstraint);
 
-        actionButtonPannel = new JPanel();
-        actionButtonPannel.setBorder(new EmptyBorder(0, 0, 25, 0));
+        actionButtonPanel = new JPanel();
+        actionButtonPanel.setBorder(new EmptyBorder(0, 0, 25, 0));
 
         backButton = new JButton("BACK");
         backButton.setPreferredSize(new Dimension(200, 50));
@@ -127,18 +118,19 @@ public class DifficultySelection extends JFrame implements ActionListener {
         continueButton.setForeground(Color.WHITE);
         continueButton.setFocusable(false);
         continueButton.setBorder(null);
+        continueButton.addActionListener(this);
 
-        actionButtonPannel.add(backButton);
-        actionButtonPannel.add(continueButton);
+        actionButtonPanel.add(backButton);
+        actionButtonPanel.add(continueButton);
 
         add(headerPanel, BorderLayout.NORTH);
-        add(levelSelectionPannel, BorderLayout.CENTER);
-        add(actionButtonPannel, BorderLayout.SOUTH);
+        add(levelSelectionPanel, BorderLayout.CENTER);
+        add(actionButtonPanel, BorderLayout.SOUTH);
 
         setSize(1000, 600);
         setLocationRelativeTo(null);
         setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
     }
 
@@ -150,8 +142,8 @@ public class DifficultySelection extends JFrame implements ActionListener {
         }
 
         if (e.getActionCommand().equals("PLAY")) {
-            // this.dispose();
-            // new Game();
+             this.dispose();
+             new Game();
         }
     }
 }

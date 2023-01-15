@@ -7,7 +7,7 @@ import models.Account;
 
 public class AccountRepository {
 
-    String jdbcUrl = "jdbc:mysql://localhost:3306/word_scrumble";
+    String jdbcUrl = "jdbc:mysql://localhost:3306/word_scramble";
     String dbUserName = "root";
     String dbPassword = "root";
 
@@ -28,7 +28,7 @@ public class AccountRepository {
     }
 
     public ArrayList<String> getUsername() {
-        ArrayList<String> users = new ArrayList<String>();
+        ArrayList<String> users = new ArrayList<>();
 
         try {
             Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
