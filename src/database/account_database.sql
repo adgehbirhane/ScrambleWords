@@ -1,14 +1,12 @@
 
 -- database for whole game.
-create database word_scrumble;
-use word_scrumble;
+create database word_scramble;
+use word_scramble;
 
 
 -- table to store users information
 create table user_account(
-    id int(100) auto_increment, 
-    full_name varchar(100),
-    email varchar(100), 
+    id int(100) auto_increment,
     username varchar(100) unique, 
     primary key(id));
 
