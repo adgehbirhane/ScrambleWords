@@ -3,7 +3,7 @@ package repository;
 import java.sql.*;
 import java.util.ArrayList;
 
-import module.Account;
+import model.Account;
 
 public class AccountRepository {
 
@@ -69,8 +69,6 @@ public class AccountRepository {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-
-
         return fullName;
     }
 }

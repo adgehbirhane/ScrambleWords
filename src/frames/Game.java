@@ -19,7 +19,7 @@ public class Game extends JFrame implements ActionListener {
     setLayout(new GridBagLayout());
 
     // create header panel
-    Border blackline = BorderFactory.createLineBorder(Color.black);
+    // Border blackline = BorderFactory.createLineBorder(Color.black);
     header = new JPanel();
     header.setLayout(new GridBagLayout());
     header.setPreferredSize(new Dimension(200, 150));
@@ -105,8 +105,8 @@ public class Game extends JFrame implements ActionListener {
   }
 
   @Override
-  public void actionPerformed(ActionEvent e) {
-    // TODO Auto-generated method stub
+  public void actionPerformed(ActionEvent e) { 
+    
     // if (e.getActionCommand().equals("Check")) {
     //   this.dispose();
     //   new WeightSelection();

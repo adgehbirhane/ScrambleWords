@@ -12,8 +12,7 @@ public class Home extends JFrame implements ActionListener {
 
     private JLabel banner, banner2;
     private JComboBox<String> usernameComboBox;
-    private JButton continueButton;
-    private JButton newUserButton; // it forwards to the registration page.
+    private JButton continueButton; 
     private ArrayList<String> usersList;
     private AccountRepository accountRepository;
 
@@ -53,6 +52,7 @@ public class Home extends JFrame implements ActionListener {
         accountRepository = new AccountRepository();
         usersList = accountRepository.getUsername();
         usernameComboBox = new JComboBox<String>(); 
+        usernameComboBox.setEditable(true);
 
          if(!(usersList.isEmpty() == true))
             for(String singleUser: usersList){
@@ -77,22 +77,22 @@ public class Home extends JFrame implements ActionListener {
         continueConstraint.gridx = 0;
         continueConstraint.gridy = 3;
         
-        newUserButton = new JButton("new account");
-        newUserButton.setPreferredSize(new Dimension(200, 30));
-        newUserButton.setBackground(new Color(0xDAD3D3));
-        newUserButton.setBorder(null);
-        newUserButton.setFocusable(false);
-        newUserButton.addActionListener(this);
-        GridBagConstraints newUserConstraint = new GridBagConstraints();
-        newUserConstraint.gridx = 0;
-        newUserConstraint.gridy = 4;
-        newUserConstraint.insets = new Insets(20, 200, 0, 0);
+        // newUserButton = new JButton("new account");
+        // newUserButton.setPreferredSize(new Dimension(200, 30));
+        // newUserButton.setBackground(new Color(0xDAD3D3));
+        // newUserButton.setBorder(null);
+        // newUserButton.setFocusable(false);
+        // newUserButton.addActionListener(this);
+        // GridBagConstraints newUserConstraint = new GridBagConstraints();
+        // newUserConstraint.gridx = 0;
+        // newUserConstraint.gridy = 4;
+        // newUserConstraint.insets = new Insets(20, 200, 0, 0);
 
         panel.add(banner, bannerConstraint);
         panel.add(banner2, banner2Constraint);
         panel.add(usernameComboBox, usernameConstraint);
         panel.add(continueButton, continueConstraint);
-        panel.add(newUserButton, newUserConstraint);
+        // panel.add(newUserButton, newUserConstraint);
 
         setSize(1000, 600);
         setResizable(false);
@@ -118,11 +118,7 @@ public class Home extends JFrame implements ActionListener {
                                "Hint: click the 'new account' button bellow";
                  JOptionPane.showMessageDialog(null,msg,"fill the required info.",2);
              }
-        }
-        if(e.getActionCommand().equals("new account")){
-            this.dispose();
-            new Registration();
-        }
+        } 
          
     }
 }

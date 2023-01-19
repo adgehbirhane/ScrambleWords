@@ -126,6 +126,7 @@ public class WeightSelection extends JFrame implements ActionListener {
         continueButton.setForeground(Color.WHITE);
         continueButton.setFocusable(false);
         continueButton.setBorder(null);
+        continueButton.addActionListener(this);
 
         actionButtonPannel.add(backButton);
         actionButtonPannel.add(continueButton);
@@ -147,8 +148,8 @@ public class WeightSelection extends JFrame implements ActionListener {
         }
 
         if (e.getActionCommand().equals("PLAY")) {
-            // this.dispose();
-            // new Game();
+            this.dispose();
+            new Game();
         }
     }
 }
