@@ -1,7 +1,6 @@
 package frames;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.*; 
 
 import repository.AccountRepository;
 import models.Account;
@@ -75,11 +74,11 @@ public class Home extends JFrame implements ActionListener {
 
         if (e.getActionCommand().equals("Continue")) {
             String username = (String) usernameComboBox.getSelectedItem();
-            if (usersList.contains(username)) {
+            if (usersList.contains(username)) { // here some error 
                 this.dispose();
                 new DifficultySelection(username);
             } else if(!usernameComboBox.getActionCommand().isEmpty()) {
-                username = usernameComboBox.getEditor().toString(); // here some error
+                username = (String) usernameComboBox.getEditor().getItem(); 
                 Account account = new Account();
                 account.setUsername(username);
                 accountRepository.save(account);

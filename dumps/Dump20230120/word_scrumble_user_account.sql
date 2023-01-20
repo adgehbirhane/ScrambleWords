@@ -36,7 +36,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (2,'javax.swing.plaf.metal.MetalComboBoxEditor$UIResource@1a7bdc6');
+INSERT INTO `user_account` VALUES (1,'admin');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
