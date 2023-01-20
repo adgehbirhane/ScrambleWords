@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b150dd97-e7b2-4430-ab8d-e32e7b91c0d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/frames/GameResult.java" afterDir="false" />
+    <list default="true" id="bb2adb4b-61f8-42a1-8ce1-e3d5e4fc72a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/repository/GameRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScrumbleWords.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScrumbleWords.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/bg.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WordPreprocess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WordPreprocess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/account_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/account_database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frames/DifficultySelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/DifficultySelection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frames/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/GameResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frames/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/AccountRepository.java" afterDir="false" />
     </list>
@@ -29,34 +34,28 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2K27DYeSxXRKhewHdns3fsAGKLJ" />
+  <component name="ProjectId" id="2KYpDtT443FYZxqZ6esTtAfvE2g" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/user/Downloads/flatlaf-3.0.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Downloads/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="ScrumbleWords" />
@@ -64,20 +63,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="permu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="repository.permu" />
+      <module name="ScrumbleWords" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.permu" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b150dd97-e7b2-4430-ab8d-e32e7b91c0d4" name="Changes" comment="" />
-      <created>1673160708313</created>
+      <changelist id="bb2adb4b-61f8-42a1-8ce1-e3d5e4fc72a9" name="Changes" comment="" />
+      <created>1674161259995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1673160708313</updated>
+      <updated>1674161259995</updated>
     </task>
     <servers />
   </component>

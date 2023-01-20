@@ -15,8 +15,10 @@ public class DifficultySelection extends JFrame implements ActionListener {
 
     private JLabel username, pageTitle, levelLabels[] = new JLabel[10];
     private JPanel headerPanel, levelPanel, actionButtonPanel, levelSelectionPanel;
+    private String user;
 
     public DifficultySelection(String user) {
+        this.user = user;
 
         setTitle("Guess the Scrambled Word");
         setLayout(new BorderLayout());
@@ -42,6 +44,7 @@ public class DifficultySelection extends JFrame implements ActionListener {
         difficultyComboBox.addItem("Moderate");
         difficultyComboBox.addItem("Hard");
         difficultyComboBox.addItem("Extreme");
+        difficultyComboBox.addItem("Fantastic");
         difficultyComboBox.setPreferredSize(new Dimension(400, 30));
         GridBagConstraints difficultyComboBoxConstraint = new GridBagConstraints();
         difficultyComboBoxConstraint.gridx = 0;
@@ -142,8 +145,18 @@ public class DifficultySelection extends JFrame implements ActionListener {
         }
 
         if (e.getActionCommand().equals("PLAY")) {
-             this.dispose();
-             new Game();
+            int level = 1;
+            if(difficultyComboBox.getSelectedItem().equals("Moderate")){ 
+                level = 2;
+            }else if(difficultyComboBox.getSelectedItem().equals("Hard")){ 
+                level = 3;
+            }else if(difficultyComboBox.getSelectedItem().equals("Extreme")){ 
+                level = 4;
+            }else if(difficultyComboBox.getSelectedItem().equals("Fantastic")){ 
+                level = 5;
+            } 
+            this.dispose();
+            new Game(user, level); 
         }
     }
 }
