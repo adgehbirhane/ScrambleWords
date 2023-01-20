@@ -13,7 +13,7 @@ public class DifficultySelection extends JFrame implements ActionListener {
     private JLabel level1JLabel, level2JLabel, level3JLabel, level4JLabel, level5JLabel, level6JLabel, level7JLabel,
             level8JLabel, level9JLabel, level10JLabel;
 
-    private JLabel username, pageTitle, levelLabels[] = new JLabel[10];
+    private JLabel username, levelLabels[] = new JLabel[10];
     private JPanel headerPanel, levelPanel, actionButtonPanel, levelSelectionPanel;
     private String user;
 

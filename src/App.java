@@ -1,8 +1,7 @@
 // it is not working on my divice.
 // import com.formdev.flatlaf.FlatLightLaf;
 import frames.Home;
-
-import javax.swing.*;
+ 
 
 public class App {
     public static void main(String[] args) {

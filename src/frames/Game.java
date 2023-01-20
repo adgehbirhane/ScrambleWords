@@ -2,16 +2,13 @@ package frames;
 
 import repository.GameRepository;
 
-import javax.swing.*;
-import javax.swing.border.Border;
+import javax.swing.*; 
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.logging.Level;
-
-import static java.lang.Thread.sleep;
+import java.util.Random; 
+ 
 
 public class Game extends JFrame implements ActionListener {
 
