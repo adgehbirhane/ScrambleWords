@@ -1,25 +1,24 @@
 package frames;
 
-import javax.swing.*; 
-import javax.swing.border.EmptyBorder; 
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WeightSelection extends JFrame implements ActionListener {
+public class DifficultySelection extends JFrame implements ActionListener {
 
-    private JComboBox<String> difficultyComboBox; // we use to choose difficulty of the game.
-    private JButton continueButton, backButton; 
-    // All of this JLabel buttons are the graphical sub-level chooses of the game.
+    private JComboBox<String> difficultyComboBox;
+    private JButton continueButton, backButton;
     private JLabel level1JLabel, level2JLabel, level3JLabel, level4JLabel, level5JLabel, level6JLabel, level7JLabel,
             level8JLabel, level9JLabel, level10JLabel;
 
     private JLabel username, pageTitle, levelLabels[] = new JLabel[10];
-    
-    // for the container of the above sub-level chooses.
-    private JPanel headerPanel, levelPanel, actionButtonPannel, levelSelectionPannel;
+    private JPanel headerPanel, levelPanel, actionButtonPanel, levelSelectionPanel;
+    private String user;
 
-    public WeightSelection(String user) {
+    public DifficultySelection(String user) {
+        this.user = user;
 
         setTitle("Guess the Scrambled Word");
         setLayout(new BorderLayout());
@@ -27,35 +26,31 @@ public class WeightSelection extends JFrame implements ActionListener {
         ImageIcon image = new ImageIcon("asset/logo.png");
         setIconImage(image.getImage());
 
-        levelSelectionPannel = new JPanel();
-        levelSelectionPannel.setLayout(new GridBagLayout());
+        headerPanel = new JPanel();
+        headerPanel.setLayout(new BorderLayout());
+        headerPanel.setBackground(Color.LIGHT_GRAY);
 
-        headerPanel = new JPanel(); 
-        headerPanel.setBackground(new Color(128,128,128)); 
-        add(headerPanel, BorderLayout.NORTH);
-        
-        pageTitle = new JLabel("            Guess the Scrambled Word");
-        pageTitle.setFont(new Font("Dialog", Font.BOLD, 30)); 
-        headerPanel.add(pageTitle, BorderLayout.WEST);
-        
-        username = new JLabel("               " + user);
-        username.setFont(new Font("Dialog", Font.BOLD, 20)); 
-        username.setForeground(Color.BLACK);
-        headerPanel.add(username, BorderLayout.EAST);
+        username = new JLabel(user);
+        username.setFont(new Font("Arial", Font.PLAIN, 20));
+        username.setHorizontalAlignment(JLabel.RIGHT);
+        headerPanel.add(username, BorderLayout.WEST);
 
-        // This are difficulties of the game.
+        levelSelectionPanel = new JPanel();
+        levelSelectionPanel.setLayout(new GridBagLayout());
+
+        // These are difficulties of the game.
         difficultyComboBox = new JComboBox<String>();
         difficultyComboBox.addItem("Easy");
         difficultyComboBox.addItem("Moderate");
         difficultyComboBox.addItem("Hard");
         difficultyComboBox.addItem("Extreme");
+        difficultyComboBox.addItem("Fantastic");
         difficultyComboBox.setPreferredSize(new Dimension(400, 30));
         GridBagConstraints difficultyComboBoxConstraint = new GridBagConstraints();
         difficultyComboBoxConstraint.gridx = 0;
         difficultyComboBoxConstraint.gridy = 0;
         difficultyComboBoxConstraint.insets = new Insets(0, 0, 10, 0);
 
-        // for the container of the above sub-level chooses.
         levelPanel = new JPanel();
         levelPanel.setLayout(new FlowLayout());
         levelPanel.setBackground(new Color(150, 140, 140));
@@ -104,11 +99,11 @@ public class WeightSelection extends JFrame implements ActionListener {
         levelPanel.add(level9JLabel);
         levelPanel.add(level10JLabel);
 
-        levelSelectionPannel.add(difficultyComboBox, difficultyComboBoxConstraint);
-        levelSelectionPannel.add(levelPanel, levelConstraint);
+        levelSelectionPanel.add(difficultyComboBox, difficultyComboBoxConstraint);
+        levelSelectionPanel.add(levelPanel, levelConstraint);
 
-        actionButtonPannel = new JPanel();
-        actionButtonPannel.setBorder(new EmptyBorder(0, 0, 25, 0));
+        actionButtonPanel = new JPanel();
+        actionButtonPanel.setBorder(new EmptyBorder(0, 0, 25, 0));
 
         backButton = new JButton("BACK");
         backButton.setPreferredSize(new Dimension(200, 50));
@@ -128,19 +123,21 @@ public class WeightSelection extends JFrame implements ActionListener {
         continueButton.setBorder(null);
         continueButton.addActionListener(this);
 
-        actionButtonPannel.add(backButton);
-        actionButtonPannel.add(continueButton);
+        actionButtonPanel.add(backButton);
+        actionButtonPanel.add(continueButton);
 
-        add(levelSelectionPannel, BorderLayout.CENTER);
-        add(actionButtonPannel, BorderLayout.SOUTH);
+        add(headerPanel, BorderLayout.NORTH);
+        add(levelSelectionPanel, BorderLayout.CENTER);
+        add(actionButtonPanel, BorderLayout.SOUTH);
 
         setSize(1000, 600);
-        // setResizable(false);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true); 
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
 
-    @Override 
+    @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("BACK")) {
             this.dispose();
@@ -148,8 +145,18 @@ public class WeightSelection extends JFrame implements ActionListener {
         }
 
         if (e.getActionCommand().equals("PLAY")) {
+            int level = 1;
+            if(difficultyComboBox.getSelectedItem().equals("Moderate")){ 
+                level = 2;
+            }else if(difficultyComboBox.getSelectedItem().equals("Hard")){ 
+                level = 3;
+            }else if(difficultyComboBox.getSelectedItem().equals("Extreme")){ 
+                level = 4;
+            }else if(difficultyComboBox.getSelectedItem().equals("Fantastic")){ 
+                level = 5;
+            } 
             this.dispose();
-            new Game();
+            new Game(user, level); 
         }
     }
 }

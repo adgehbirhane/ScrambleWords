@@ -3,72 +3,46 @@ package repository;
 import java.sql.*;
 import java.util.ArrayList;
 
-import model.Account;
+import models.Account;
 
 public class AccountRepository {
 
-	String jdbcUrl = "jdbc:mysql://localhost:3306/word_scrumble";
-	String dbUserName = "root";
-	String dbPassword = "root"; 
+    String jdbcUrl = "jdbc:mysql://localhost:3306/word_scrumble";
+    String dbUserName = "root";
+    String dbPassword = "root";
 
-	public void  save(Account account) { 
+    public void save(Account account) {
 
-		try {
-			Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
-			String query ="INSERT INTO user_account VALUES(?,?,?,?)";
+        try {
+            Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
+            String query = "INSERT INTO user_account VALUES(?,?)";
 
-			PreparedStatement myStmt = con.prepareStatement(query);
-			myStmt.setInt(1, 0);  // id is auto-increment
-			myStmt.setString(2, account.getFull_name());
-			myStmt.setString(3, account.getEmail());
-			myStmt.setString(4, account.getUsername()); 
-			myStmt.executeUpdate();
-			con.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
-    public ArrayList<String> getUsername(){
-        ArrayList<String> users = new ArrayList<String>();
-
-		try {
-			Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
-
-			ResultSet rs = con.createStatement().executeQuery("SELECT * FROM user_account");
-
-			while(rs.next()) { 
-				String username = rs.getString("username"); 
-                users.add(username); 
-			} 
-
-			con.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-
-
-        return users;
+            PreparedStatement myStmt = con.prepareStatement(query);
+            myStmt.setInt(1, 0);  // id is auto-increment
+            myStmt.setString(2, account.getUsername());
+            myStmt.executeUpdate();
+            con.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
-    public String getFullName(String user){
-        String fullName = "";
-		  String query = "SELECT * FROM user_account";
 
-		  // I don't know why this commented code doesn't work
-//		String query = "SELECT * FROM user_account WHERE username = " + user; 
+    public ArrayList<String> getUsername() {
+        ArrayList<String> users = new ArrayList<>();
 
-		try {
-			Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
+        try {
+            Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
 
-			ResultSet rs = con.createStatement().executeQuery(query);
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM user_account");
 
-			while(rs.next()) {
-				fullName = rs.getString("full_name");
-			}
-
-			con.close();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-        return fullName;
+            while (rs.next()) {
+                String username = rs.getString("username");
+                users.add(username);
+            }
+            con.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return users;
     }
 }
