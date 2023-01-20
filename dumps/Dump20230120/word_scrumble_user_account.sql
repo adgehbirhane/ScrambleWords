@@ -24,8 +24,6 @@ DROP TABLE IF EXISTS `user_account`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_account` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `full_name` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
@@ -38,7 +36,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,'Belay Birhanu','adgeh@gmail.com','adgeh'),(2,'Epha Belaineh','epha@gmail.com','epha');
+INSERT INTO `user_account` VALUES (2,'javax.swing.plaf.metal.MetalComboBoxEditor$UIResource@1a7bdc6');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-20 16:05:30
+-- Dump completed on 2023-01-20 18:56:39
