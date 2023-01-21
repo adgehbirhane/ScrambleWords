@@ -23,7 +23,8 @@ public class Game extends JFrame implements ActionListener {
     private JButton backButton, skipButton, checkButton;
     private int level, score, progress = 0;
     private String user, scrambledWord, correctWord;
-    private GameRepository gameRepository;
+    private repository.GameRepository gameRepository;
+    private repository.AccountRepository accountRepository;
     private ArrayList<String> words, resultHistory;
     private Random random;
 
@@ -61,6 +62,8 @@ public class Game extends JFrame implements ActionListener {
         this.score = 0;
         this.user = user;
         resultHistory = new ArrayList<String>();
+        accountRepository = new repository.AccountRepository();
+
         setTitle("Guess the Scrambled Word");
         setLayout(new GridBagLayout());
 
@@ -171,6 +174,10 @@ public class Game extends JFrame implements ActionListener {
 
         progressBar.setValue(progress);
         if (progress >= 10) {
+            long millis = System.currentTimeMillis();   
+            java.util.Date date = new java.util.Date(millis);      
+            String currentDate = date.toString();
+            accountRepository.savaUserHistory(user, score, currentDate);
             dispose();
             new GameResult(user, score, resultHistory, level);
         }

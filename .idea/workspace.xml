@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="596bbc94-20ec-4297-9a8a-1ed5f1d316ae" name="Changes" comment="">
+    <list default="true" id="7a941944-d8ec-4716-83f9-bec5b5611f8e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_20_57_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_20_57__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_21_07_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_22_41_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_22_41_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_22_41__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_22_41__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/dumps/Dump20230120/word_scrumble_user_account.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/dumps/Dump20230120/word_scrumble_user_account.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/dumps/Dump20230120/word_scrumble_words.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/dumps/Dump20230120/word_scrumble_words.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScrumbleWords.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScrumbleWords.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ScrumbleWords/database/account_database.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frames/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/GameResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/AccountRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,26 +26,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="first_branch" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2KdIDpJURimV29hlDFo3czeYaQc" />
+  <component name="ProjectId" id="2Kdcc0ZhVlibgC2h2c8RoN436Ix" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/user/Downloads/flatlaf-3.0.jar",
+    "last_opened_file_path": "C:/Users/Administrator/Downloads/flatlaf-3.0.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -58,11 +64,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="596bbc94-20ec-4297-9a8a-1ed5f1d316ae" name="Changes" comment="" />
-      <created>1674297934143</created>
+      <changelist id="7a941944-d8ec-4716-83f9-bec5b5611f8e" name="Changes" comment="" />
+      <created>1674307983015</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1674297934143</updated>
+      <updated>1674307983015</updated>
     </task>
     <servers />
   </component>

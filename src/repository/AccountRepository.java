@@ -45,4 +45,39 @@ public class AccountRepository {
         }
         return users;
     }
+    public void savaUserHistory(String username, int score, String date) {
+        
+        try {
+            Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
+            String query = "INSERT INTO scores VALUES(?,?,?,?)";
+
+            PreparedStatement myStmt = con.prepareStatement(query);
+            myStmt.setInt(1, 0);  // id is auto-increment
+            myStmt.setString(2, username);
+            myStmt.setInt(3, score);
+            myStmt.setString(4, date);
+            myStmt.executeUpdate();
+            con.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+        public ArrayList<Integer> getMyScore(String user){
+            ArrayList<Integer> myScore=new ArrayList<>();
+            try {
+                Connection con = DriverManager.getConnection(jdbcUrl, dbUserName, dbPassword);
+                String sql = "SELECT * FROM scores WHERE username = '" + user +"'";
+                ResultSet rs = con.createStatement().executeQuery(sql);
+    
+                while (rs.next()) {
+                    int score = rs.getInt("score");
+                    myScore.add(score);
+                }
+                con.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return myScore;
+        } 
 }
