@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="596bbc94-20ec-4297-9a8a-1ed5f1d316ae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScrumbleWords.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScrumbleWords.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/DifficultySelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/DifficultySelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/dumps/Dump20230120/word_scrumble_user_account.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/dumps/Dump20230120/word_scrumble_user_account.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/dumps/Dump20230120/word_scrumble_words.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/dumps/Dump20230120/word_scrumble_words.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frames/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/GameResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/GameRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

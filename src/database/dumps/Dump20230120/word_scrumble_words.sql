@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: localhost    Database: word_scrumble
+-- Host: localhost    Database: word_scramble
 -- ------------------------------------------------------
 -- Server version	8.0.31
 

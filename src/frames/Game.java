@@ -16,7 +16,7 @@ import java.util.Random;
 public class Game extends JFrame implements ActionListener {
 
     private JScrollPane scroll;
-    private JTextPane history;
+    private JTextArea history;
     private JTextField answerArea, currentWord;
     private JPanel buttonsPanel;
     private JProgressBar progressBar;
@@ -64,10 +64,11 @@ public class Game extends JFrame implements ActionListener {
         setTitle("Guess the Scrambled Word");
         setLayout(new GridBagLayout());
 
-        history = new JTextPane();
+        history = new JTextArea();
         history.setEditable(false);
-        history.setBorder(new EmptyBorder(0,0,0,0));
         history.setPreferredSize(new Dimension(400, 200));
+        history.setFont(new Font("Arial", Font.PLAIN, 20));
+        history.setBorder(new EmptyBorder(0,0,0,0));
 
         scroll = new JScrollPane(history, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -154,18 +155,10 @@ public class Game extends JFrame implements ActionListener {
         if (e.getActionCommand().equals("Check") || e.getActionCommand().equals("Skip")) {
 
             if (correctWord.equalsIgnoreCase(answerArea.getText())) {
-                SimpleAttributeSet att = new SimpleAttributeSet();
-                StyleConstants.setBold(att, true);
-                StyleConstants.setForeground(att, Color.GREEN);
-                history.setCharacterAttributes(att, false);
-                history.setText(answerArea.getText() + " :correct" + " \n\n");
+                history.append(answerArea.getText() + " :correct" + " \n\n");
                 score++;
             } else {
-                SimpleAttributeSet att = new SimpleAttributeSet();
-                StyleConstants.setBold(att, true);
-                StyleConstants.setForeground(att, Color.RED);
-                history.setCharacterAttributes(att, false);
-                history.setText(answerArea.getText() + " :wrong" + " \n\n");
+                history.append(answerArea.getText() + " :wrong" + " \n\n");
             }
             resultHistory.add(answerArea.getText());
             resultHistory.add(correctWord);
