@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a941944-d8ec-4716-83f9-bec5b5611f8e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_20_57_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_20_57__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_21_07_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_22_41_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_22_41_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_22_41__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_20_2023_22_41__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScrumbleWords.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScrumbleWords.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ScrumbleWords/database/account_database.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/GameResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/AccountRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="7a941944-d8ec-4716-83f9-bec5b5611f8e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
