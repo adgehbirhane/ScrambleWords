@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a941944-d8ec-4716-83f9-bec5b5611f8e" name="Changes" comment="" />
+    <list default="true" id="7a941944-d8ec-4716-83f9-bec5b5611f8e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/ScrumbleWords/database/dumps/Dump20230120/word_scrumble_user_account.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ScrumbleWords/database/dumps/Dump20230120/word_scrumble_words.sql" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
