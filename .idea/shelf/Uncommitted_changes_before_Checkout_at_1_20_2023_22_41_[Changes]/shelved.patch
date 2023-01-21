@@ -1,0 +1,29 @@
+Index: src/database/dumps/Dump20230120/word_scrumble_words.sql
+===================================================================
+diff --git a/src/database/dumps/Dump20230120/word_scrumble_words.sql b/src/database/dumps/Dump20230120/word_scrumble_words.sql
+--- a/src/database/dumps/Dump20230120/word_scrumble_words.sql	
++++ b/src/database/dumps/Dump20230120/word_scrumble_words.sql	
+@@ -1,6 +1,6 @@
+ -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
+ --
+--- Host: localhost    Database: word_scrumble
++-- Host: localhost    Database: word_scramble
+ -- ------------------------------------------------------
+ -- Server version	8.0.31
+ 
+Index: src/database/dumps/Dump20230120/word_scrumble_user_account.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)\r\n--\r\n-- Host: localhost    Database: word_scrumble\r\n-- ------------------------------------------------------\r\n-- Server version\t8.0.31\r\n\r\n/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;\r\n/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;\r\n/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;\r\n/*!50503 SET NAMES utf8 */;\r\n/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\r\n/*!40103 SET TIME_ZONE='+00:00' */;\r\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\r\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\r\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\r\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\r\n\r\n--\r\n-- Table structure for table `user_account`\r\n--\r\n\r\nDROP TABLE IF EXISTS `user_account`;\r\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\r\n/*!50503 SET character_set_client = utf8mb4 */;\r\nCREATE TABLE `user_account` (\r\n  `id` int NOT NULL AUTO_INCREMENT,\r\n  `username` varchar(100) DEFAULT NULL,\r\n  PRIMARY KEY (`id`),\r\n  UNIQUE KEY `username` (`username`)\r\n) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\r\n/*!40101 SET character_set_client = @saved_cs_client */;\r\n\r\n--\r\n-- Dumping data for table `user_account`\r\n--\r\n\r\nLOCK TABLES `user_account` WRITE;\r\n/*!40000 ALTER TABLE `user_account` DISABLE KEYS */;\r\nINSERT INTO `user_account` VALUES (1,'admin');\r\n/*!40000 ALTER TABLE `user_account` ENABLE KEYS */;\r\nUNLOCK TABLES;\r\n/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;\r\n\r\n/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;\r\n/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;\r\n/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;\r\n/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;\r\n/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;\r\n/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;\r\n/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;\r\n\r\n-- Dump completed on 2023-01-20 18:56:39\r\n
+===================================================================
+diff --git a/src/database/dumps/Dump20230120/word_scrumble_user_account.sql b/src/database/dumps/Dump20230120/word_scrumble_user_account.sql
+--- a/src/database/dumps/Dump20230120/word_scrumble_user_account.sql	
++++ b/src/database/dumps/Dump20230120/word_scrumble_user_account.sql	
+@@ -1,6 +1,6 @@
+ -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
+ --
+--- Host: localhost    Database: word_scrumble
++-- Host: localhost    Database: word_scramble
+ -- ------------------------------------------------------
+ -- Server version	8.0.31
+ 

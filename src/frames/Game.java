@@ -2,18 +2,21 @@ package frames;
 
 import repository.GameRepository;
 
-import javax.swing.*; 
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Random; 
- 
+import java.util.Random;
+
 
 public class Game extends JFrame implements ActionListener {
 
     private JScrollPane scroll;
-    private JTextArea history;
+    private JTextPane history;
     private JTextField answerArea, currentWord;
     private JPanel buttonsPanel;
     private JProgressBar progressBar;
@@ -21,43 +24,39 @@ public class Game extends JFrame implements ActionListener {
     private int level, score, progress = 0;
     private String user, scrambledWord, correctWord;
     private GameRepository gameRepository;
-    private ArrayList<String> words, resultHistory; 
-    Random random;  
-    
-    public String getScrumbeledWords(String wordToBeScrambeled){
+    private ArrayList<String> words, resultHistory;
+    private Random random;
 
-        char[] wordarray = wordToBeScrambeled.toCharArray();
+    public String getScrambledWords(String wordToBeScrambeled) {
 
-        char[] dummywordarray = wordToBeScrambeled.toCharArray();
- 
+        char[] wordArray = wordToBeScrambeled.toCharArray();
+        char[] dummyWordArray = wordToBeScrambeled.toCharArray();
         random = new Random();
- 
-        int r = random.nextInt(wordarray.length-1);
+
+        int r = random.nextInt(wordArray.length - 1);
         int i = 0;
- 
-        int j = r+1;
- 
-        while(i <= r){
- 
-            dummywordarray[wordarray.length -i-1] = wordarray[i];
- 
+        int j = r + 1;
+
+        while (i <= r) {
+            dummyWordArray[wordArray.length - i - 1] = wordArray[i];
             i++;
         }
- 
- 
-        while (j <= wordarray.length -1){
- 
-            dummywordarray[j-r-1] = wordarray[j];
- 
+
+        while (j <= wordArray.length - 1) {
+            dummyWordArray[j - r - 1] = wordArray[j];
             j++;
- 
-        }
- 
-        String newword = String.valueOf(dummywordarray);
-        return newword; 
         }
 
+        String newWord = String.valueOf(dummyWordArray);
+        newWord = newWord.replace("", "  ").trim();
+        return newWord.toUpperCase();
+    }
+
     public Game(String user, int level) {
+
+        ImageIcon image = new ImageIcon("asset/logo.png");
+        setIconImage(image.getImage());
+
         this.level = level;
         this.score = 0;
         this.user = user;
@@ -65,8 +64,10 @@ public class Game extends JFrame implements ActionListener {
         setTitle("Guess the Scrambled Word");
         setLayout(new GridBagLayout());
 
-        history = new JTextArea(10, 36);
+        history = new JTextPane();
         history.setEditable(false);
+        history.setBorder(new EmptyBorder(0,0,0,0));
+        history.setPreferredSize(new Dimension(400, 200));
 
         scroll = new JScrollPane(history, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -74,24 +75,27 @@ public class Game extends JFrame implements ActionListener {
         words = gameRepository.getWords(level);
         random = new Random();
 
-        correctWord = words.get(random.nextInt(words.size()-1));
-        scrambledWord =  getScrumbeledWords(correctWord);
+        correctWord = words.get(random.nextInt(words.size() - 1));
+        scrambledWord = getScrambledWords(correctWord);
 
         currentWord = new JTextField(scrambledWord);
-        currentWord.setFont(new Font("Arial", Font.BOLD, 30));
+        currentWord.setFont(new Font("Arial", Font.PLAIN, 20));
         currentWord.setPreferredSize(new Dimension(400, 50));
         currentWord.setHorizontalAlignment(JTextField.LEFT);
         currentWord.setEditable(false);
+        currentWord.setBorder(new EmptyBorder(0,0,0,0));
         GridBagConstraints currentWordConstraint = new GridBagConstraints();
         currentWordConstraint.gridx = 0;
         currentWordConstraint.gridy = 1;
+        currentWordConstraint.insets = new Insets(50,0,0,0);
 
         answerArea = new JTextField();
-        answerArea.setFont(new Font("Arial", Font.BOLD, 20));
+        answerArea.setFont(new Font("Arial", Font.PLAIN, 20));
         answerArea.setPreferredSize(new Dimension(400, 50));
         GridBagConstraints answerAreaConstraint = new GridBagConstraints();
         answerAreaConstraint.gridx = 0;
         answerAreaConstraint.gridy = 2;
+
 
         progressBar = new JProgressBar(0, 10);
         progressBar.setValue(progress);
@@ -106,7 +110,7 @@ public class Game extends JFrame implements ActionListener {
         buttonsPanelConstraint.gridy = 4;
         buttonsPanelConstraint.insets = new Insets(50, 0, 0, 0);
 
-        backButton = new JButton("back");
+        backButton = new JButton("Back");
         backButton.setFocusable(false);
         backButton.setPreferredSize(new Dimension(100, 30));
         backButton.addActionListener(this);
@@ -142,24 +146,32 @@ public class Game extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         progress++;
 
-        if (e.getActionCommand().equals("back")) { 
+        if (e.getActionCommand().equals("Back")) {
             this.dispose();
             new DifficultySelection(user);
-        } 
+        }
 
         if (e.getActionCommand().equals("Check") || e.getActionCommand().equals("Skip")) {
 
-            if(correctWord.equalsIgnoreCase(answerArea.getText())) {
-                history.append(answerArea.getText() + " :correct"+" \n\n");
+            if (correctWord.equalsIgnoreCase(answerArea.getText())) {
+                SimpleAttributeSet att = new SimpleAttributeSet();
+                StyleConstants.setBold(att, true);
+                StyleConstants.setForeground(att, Color.GREEN);
+                history.setCharacterAttributes(att, false);
+                history.setText(answerArea.getText() + " :correct" + " \n\n");
                 score++;
-            }else{
-                history.append(answerArea.getText() + " :wrong"+" \n\n");
+            } else {
+                SimpleAttributeSet att = new SimpleAttributeSet();
+                StyleConstants.setBold(att, true);
+                StyleConstants.setForeground(att, Color.RED);
+                history.setCharacterAttributes(att, false);
+                history.setText(answerArea.getText() + " :wrong" + " \n\n");
             }
             resultHistory.add(answerArea.getText());
-            resultHistory.add(correctWord); 
+            resultHistory.add(correctWord);
 
-            correctWord = words.get(random.nextInt(words.size()-1));
-            scrambledWord =  getScrumbeledWords(correctWord);
+            correctWord = words.get(random.nextInt(words.size() - 1));
+            scrambledWord = getScrambledWords(correctWord);
             currentWord.setText(scrambledWord);
             answerArea.setText("");
         }

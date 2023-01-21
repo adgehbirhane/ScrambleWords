@@ -1,6 +1,6 @@
 package frames;
 
-import javax.swing.*; 
+import javax.swing.*;
 
 import repository.AccountRepository;
 import models.Account;
@@ -28,6 +28,7 @@ public class Home extends JFrame implements ActionListener {
 
         banner = new JLabel("Guess the Scrambled Word");
         banner.setFont(new Font("Ariel", Font.BOLD, 40));
+        banner.setForeground(new Color(44, 62, 80));
         GridBagConstraints bannerConstraint = new GridBagConstraints();
         bannerConstraint.gridx = 0;
         bannerConstraint.gridy = 0;
@@ -37,13 +38,13 @@ public class Home extends JFrame implements ActionListener {
         usernameComboBox = new JComboBox<String>();
         usernameComboBox.setEditable(true);
 
-        if (!(usersList.isEmpty() == true))
-            for (String singleUser : usersList) {
-                usernameComboBox.addItem(singleUser);
-            }
+        for (String singleUser : usersList) {
+            usernameComboBox.addItem(singleUser);
+        }
 
         usernameComboBox.setPreferredSize(new Dimension(400, 40));
         usernameComboBox.setFont(new Font("Arial", Font.PLAIN, 20));
+        usernameComboBox.setSelectedIndex(-1);
         GridBagConstraints usernameConstraint = new GridBagConstraints();
         usernameConstraint.gridx = 0;
         usernameConstraint.gridy = 2;
@@ -53,6 +54,8 @@ public class Home extends JFrame implements ActionListener {
         continueButton.setFocusable(false);
         continueButton.setPreferredSize(new Dimension(400, 40));
         continueButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        continueButton.setBackground(new Color(52, 152, 219));
+        continueButton.setForeground(new Color(236, 240, 241));
         continueButton.addActionListener(this);
         GridBagConstraints continueConstraint = new GridBagConstraints();
         continueConstraint.gridx = 0;
@@ -74,11 +77,13 @@ public class Home extends JFrame implements ActionListener {
 
         if (e.getActionCommand().equals("Continue")) {
             String username = (String) usernameComboBox.getSelectedItem();
-            if (usersList.contains(username)) { // here some error 
+            if (usernameComboBox.getEditor().getItem() == null) {
+                JOptionPane.showMessageDialog(this, "You must enter a username to play the game");
+            } else if (usersList.contains(username)) {
                 this.dispose();
                 new DifficultySelection(username);
-            } else if(!usernameComboBox.getActionCommand().isEmpty()) {
-                username = (String) usernameComboBox.getEditor().getItem(); 
+            } else {
+                username = (String) usernameComboBox.getEditor().getItem();
                 Account account = new Account();
                 account.setUsername(username);
                 accountRepository.save(account);

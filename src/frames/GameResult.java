@@ -15,6 +15,10 @@ public class GameResult extends JFrame implements ActionListener {
     private String user;
 
     public GameResult(String user, int result, ArrayList<String> resultHistory, int level) {
+
+        ImageIcon image = new ImageIcon("asset/logo.png");
+        setIconImage(image.getImage());
+
         this.user = user;
         this.level = level;
 

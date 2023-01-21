@@ -7,7 +7,7 @@ import models.Account;
 
 public class AccountRepository {
 
-    String jdbcUrl = "jdbc:mysql://localhost:3306/word_scrumble";
+    String jdbcUrl = "jdbc:mysql://localhost:3306/word_scramble";
     String dbUserName = "root";
     String dbPassword = "root";
 

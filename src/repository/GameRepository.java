@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class GameRepository {
 
-    String jdbcUrl = "jdbc:mysql://localhost:3306/word_scrumble";
+    String jdbcUrl = "jdbc:mysql://localhost:3306/word_scramble";
     String dbUserName = "root";
     String dbPassword = "root"; 
     
