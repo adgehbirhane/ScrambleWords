@@ -3,9 +3,7 @@ package frames;
 import repository.GameRepository;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
+import javax.swing.border.EmptyBorder; 
 
 import java.awt.*;
 import java.awt.event.*;
@@ -67,9 +65,9 @@ public class Game extends JFrame implements ActionListener {
         setTitle("Guess the Scrambled Word");
         setLayout(new GridBagLayout());
 
-        history = new JTextArea();
+        history = new JTextArea(10,35);
         history.setEditable(false);
-        history.setPreferredSize(new Dimension(400, 200));
+        // history.setPreferredSize(new Dimension(400, 200));
         history.setFont(new Font("Arial", Font.PLAIN, 20));
         history.setBorder(new EmptyBorder(0,0,0,0));
 
