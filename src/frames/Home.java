@@ -19,6 +19,7 @@ public class Home extends JFrame implements ActionListener {
 
     public Home() {
         accountRepository = new AccountRepository();
+        System.out.print("hi");
 
         setTitle("Guess the Scrambled Word");
         setLayout(new GridBagLayout());
